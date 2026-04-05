@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hizay Portfolio</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(45deg, #00f5ff, #7c3aed);
+    animation: fadeIn 1s ease-in;
+}
+
+header h1 {
+    font-size: 2.2em;
+}
+
+/* SECTION */
+section {
+    padding: 20px;
+}
+
+/* CARD */
+.card {
+    background: #1e293b;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 20px;
+    transition: 0.3s;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.card.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: #334155;
+}
+
+/* YOUTUBE */
+.youtube iframe {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+/* MOBİL */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.6em;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🚀 Hizay'ın Dünyası</h1>
+    <p>4 yıldır robotik ve yazılım geliştiriyorum 🤖💻</p>
+</header>
+
+<section>
+    <h2>👤 Hakkımda</h2>
+    <div class="card">
+        <p>
+        6. sınıf öğrencisiyim. LEGO WeDo 2.0 ve Spike Prime ile 50+ proje yaptım. 
+        Python ve web geliştirme ile ilgileniyorum.
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2>🚀 Projelerim</h2>
+
+    <div class="card">
+        <h3>🤖 Robot Projeleri</h3>
+        <p>LEGO WeDo ve Spike Prime ile yaptığım projeler</p>
+    </div>
+
+    <div class="card">
+        <h3>💻 Web Projeleri</h3>
+        <p>HTML, CSS ve JS ile geliştirdiğim siteler</p>
+    </div>
+
+    <div class="card">
+        <h3>🐍 Python Projeleri</h3>
+        <p>Algoritma ve oyun projeleri</p>
+    </div>
+
+</section>
+
+<section class="youtube">
+    <h2>🎥 YouTube Kanalım</h2>
+
+    <iframe 
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+    allowfullscreen>
+    </iframe>
+
+</section>
+
+<footer>
+    <p>© 2026 Hizay</p>
+</footer>
+
+<script>
+// Scroll animasyonu
+const cards = document.querySelectorAll(".card");
+
+window.addEventListener("scroll", () => {
+    cards.forEach(card => {
+        const top = card.getBoundingClientRect().top;
+        if(top < window.innerHeight - 50){
+            card.classList.add("show");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
